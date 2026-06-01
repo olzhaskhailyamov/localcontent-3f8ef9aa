@@ -49,7 +49,33 @@ type CatKey = (typeof CATEGORIES)[number]["key"];
 type Counts = Record<CatKey, number>;
 const emptyCounts: Counts = { cat1: 0, cat2: 0, cat3: 0, cat4: 0 };
 
-const T = {
+type Translations = {
+  title: string;
+  subtitle: string;
+  staff: string;
+  local: string;
+  expats: string;
+  check: string;
+  g12: string;
+  g34: string;
+  need: (n: number, g: string) => React.ReactNode;
+  okGroup: (g: string, c: number, r: number, has: boolean) => string;
+  now: string;
+  min: string;
+  c12: string;
+  c34: string;
+  total: string;
+  foreigners: string;
+  locals: string;
+  required: string;
+  norm12: string;
+  norm34: string;
+  totalAll: string;
+  totalExp: string;
+  localShare: string;
+};
+
+const T: Record<Lang, Translations> = {
   ru: {
     title: "Калькулятор квот ИРС (РК)",
     subtitle: "Введите количество сотрудников по категориям — расчёт квот выполняется в реальном времени.",
