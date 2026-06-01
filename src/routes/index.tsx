@@ -58,7 +58,7 @@ type Translations = {
   check: string;
   g12: string;
   g34: string;
-  need: (n: number, g: string) => React.ReactNode;
+  need: (n: number, g: string) => ReactNode;
   okGroup: (g: string, c: number, r: number, has: boolean) => string;
   now: string;
   min: string;
