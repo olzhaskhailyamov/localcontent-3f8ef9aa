@@ -309,17 +309,19 @@ function Index() {
               <div className="pt-1 text-xs">{t.norm34}</div>
             </CardContent>
           </Card>
-          {false && <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm">{t.total}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-1 text-sm text-muted-foreground">
-              <div>{t.totalAll}: <span className="font-medium text-foreground">{total}</span></div>
-              <div>{t.locals}: <span className="font-medium text-foreground">{totalLocal}</span></div>
-              <div>{t.totalExp}: <span className="font-medium text-foreground">{totalExpat}</span></div>
-              <div className="pt-1 text-xs">{t.localShare}: {localShare}%</div>
-            </CardContent>
-          </Card>
+          {false && (
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">{t.total}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-1 text-sm text-muted-foreground">
+                <div>{t.totalAll}: <span className="font-medium text-foreground">{total}</span></div>
+                <div>{t.locals}: <span className="font-medium text-foreground">{totalLocal}</span></div>
+                <div>{t.totalExp}: <span className="font-medium text-foreground">{totalExpat}</span></div>
+                <div className="pt-1 text-xs">{t.localShare}: {localShare}%</div>
+              </CardContent>
+            </Card>
+          )}
         </section>
       </div>
     </div>
