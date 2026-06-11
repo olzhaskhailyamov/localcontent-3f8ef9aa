@@ -193,25 +193,23 @@ function QuotaAlert({
 }) {
   if (expats === 0 || current >= required) {
     return (
-      <Alert className="border-emerald-500/40 bg-emerald-500/10 py-2">
-        <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-        <AlertDescription className="text-emerald-700 dark:text-emerald-400 text-sm">
-          {t.okGroup(groupLabel, current, required, expats > 0)}
-        </AlertDescription>
-      </Alert>
+      <div className="flex items-center gap-2 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-700 dark:text-emerald-400">
+        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" />
+        <div>{t.okGroup(groupLabel, current, required, expats > 0)}</div>
+      </div>
     );
   }
   const diff = required - current;
   return (
-    <Alert variant="destructive" className="py-2">
-      <AlertTriangle className="h-4 w-4" />
-      <AlertDescription className="text-sm">
+    <div className="flex items-center gap-2 rounded-lg border border-destructive/50 bg-destructive/5 px-4 py-2 text-sm text-destructive">
+      <AlertTriangle className="h-4 w-4 shrink-0" />
+      <div>
         {t.need(diff, groupLabel)}
         <div className="mt-0.5 text-xs opacity-80">
           {t.now}: {current} · {t.min}: {required}
         </div>
-      </AlertDescription>
-    </Alert>
+      </div>
+    </div>
   );
 }
 
