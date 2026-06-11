@@ -286,7 +286,7 @@ function Index() {
           <QuotaAlert t={t} groupLabel={t.g34} required={required34} current={locals34} expats={expats34} />
         </section>
 
-        <section className="mt-4 grid gap-3 md:grid-cols-3">
+        <section className="mt-4 grid gap-3 md:grid-cols-2">
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">{t.c12}</CardTitle>
@@ -309,7 +309,7 @@ function Index() {
               <div className="pt-1 text-xs">{t.norm34}</div>
             </CardContent>
           </Card>
-          <Card>
+          {false && <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">{t.total}</CardTitle>
             </CardHeader>
