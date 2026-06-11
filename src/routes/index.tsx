@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Калькулятор квот ИРС — РК" },
+      { title: "Калькулятор расчёта местного содержания в кадрах — РК" },
       {
         name: "description",
         content:
-          "Калькулятор проверки квот на иностранную рабочую силу (ИРС) согласно законодательству Республики Казахстан.",
+          "Инструмент автоматизирует процесс определения категорий иностранных сотрудников, привлекаемых на работу в Республику Казахстан, в строгом соответствии с действующим законодательством.",
       },
     ],
   }),
@@ -25,23 +25,23 @@ type Lang = "ru" | "en";
 const CATEGORIES = [
   {
     key: "cat1",
-    ru: "1 категория: Руководители, Заместители (CEO, Deputy CEO)",
+    ru: "1 категория: Руководители, Заместители (CEO, Заместители CEO)",
     en: "Category 1: Executives, Deputies (CEO, Deputy CEO)",
   },
   {
     key: "cat2",
-    ru: "2 категория: Менеджеры среднего звена (Главный бухгалтер, Начальники отделов)",
-    en: "Category 2: Middle Management (Chief Accountant, Heads of Departments)",
+    ru: "2 категория: Менеджеры среднего звена (Главный бухгалтер, Начальники отделов, и т.д.)",
+    en: "Category 2: Middle Management (Chief Accountant, Heads of Departments, etc.)",
   },
   {
     key: "cat3",
-    ru: "3 категория: Специалисты (Инженер, Аналитик, Программист)",
-    en: "Category 3: Specialists (Engineer, Analyst, Programmer)",
+    ru: "3 категория: Специалисты (Инженер, Аналитик, Программист, и т.д.)",
+    en: "Category 3: Specialists (Engineer, Analyst, Programmer, etc.)",
   },
   {
     key: "cat4",
-    ru: "4 категория: Квалифицированные рабочие (Сварщик, Электрик, Техник)",
-    en: "Category 4: Skilled Workers (Welder, Electrician, Technician)",
+    ru: "4 категория: Квалифицированные рабочие (Сварщик, Электрик, Техник, и т.д.)",
+    en: "Category 4: Skilled Workers (Welder, Electrician, Technician, etc.)",
   },
 ] as const;
 
@@ -77,12 +77,12 @@ type Translations = {
 
 const T: Record<Lang, Translations> = {
   ru: {
-    title: "Калькулятор квот ИРС (РК)",
-    subtitle: "Введите количество сотрудников по категориям — расчёт квот выполняется в реальном времени.",
+    title: "Калькулятор расчёта местного содержания в кадрах — РК",
+    subtitle: "Введите количество сотрудников по категориям — расчёт соотношения выполняется в реальном времени.",
     staff: "Состав персонала",
     local: "Нац.",
     expats: "Экспаты",
-    check: "Проверка квот",
+    check: "Проверка cоответствий",
     g12: "1 и 2 категориям",
     g34: "3 и 4 категориям",
     need: (n: number, g: string) => (
@@ -105,12 +105,12 @@ const T: Record<Lang, Translations> = {
     localShare: "Местное содержание",
   },
   en: {
-    title: "Foreign Workforce Quota Calculator (KZ)",
-    subtitle: "Enter the number of employees by category — quotas are calculated in real time.",
+    title: "Local Content Calculator for Personnel (KZ)",
+    subtitle: "Enter the number of employees by category — the ratio calculation is performed in real time.",
     staff: "Staff Composition",
     local: "Local",
     expats: "Expats",
-    check: "Quota check",
+    check: "Compliance check",
     g12: "categories 1 & 2",
     g34: "categories 3 & 4",
     need: (n: number, g: string) => (
