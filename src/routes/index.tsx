@@ -80,8 +80,8 @@ const T: Record<Lang, Translations> = {
     title: "Калькулятор расчёта местного содержания в кадрах — РК",
     subtitle: "Введите количество сотрудников по категориям — расчёт соотношения выполняется в реальном времени.",
     staff: "Состав персонала",
-    local: "Нац.",
-    expats: "Экспаты",
+    local: "Казахстанцы",
+    expats: "Иностранные сотрудники",
     check: "Проверка cоответствий",
     g12: "1 и 2 категориям",
     g34: "3 и 4 категориям",
@@ -250,16 +250,16 @@ function Index() {
           </CardHeader>
           <CardContent className="px-2 sm:px-4 pb-3">
             {/* Column headers */}
-            <div className="grid grid-cols-[1fr_64px_64px] sm:grid-cols-[1fr_96px_96px] items-end gap-2 border-b pb-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            <div className="grid grid-cols-[1fr_74px_88px] sm:grid-cols-[1fr_100px_150px] items-end gap-2 border-b pb-1.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide text-muted-foreground">
               <div />
-              <div className="text-center">{t.local}</div>
-              <div className="text-center">{t.expats}</div>
+              <div className="text-center leading-tight">{t.local}</div>
+              <div className="text-center leading-tight">{t.expats}</div>
             </div>
             <div className="divide-y">
               {CATEGORIES.map((c) => (
                 <div
                   key={c.key}
-                  className="grid grid-cols-[1fr_64px_64px] sm:grid-cols-[1fr_96px_96px] items-center gap-2 py-2"
+                  className="grid grid-cols-[1fr_74px_88px] sm:grid-cols-[1fr_100px_150px] items-center gap-2 py-2"
                 >
                   <div className="text-xs sm:text-sm leading-snug pr-1">{c[lang]}</div>
                   <NumInput
